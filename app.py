@@ -3,7 +3,7 @@ from sanic.response import html, redirect, text, json
 from jinja2 import Environment, PackageLoader
 
 # Own
-# from server import Server
+from server import Server
 import utils
 
 
@@ -14,7 +14,7 @@ env = Environment(
 app = Sanic(__name__)
 app.static("/static", "./static")
 
-# server = Server()
+server = Server()
 
 
 @app.route("/")
