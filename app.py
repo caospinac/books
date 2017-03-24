@@ -2,7 +2,7 @@ from sanic import Sanic
 from sanic.response import html, redirect, text, json
 from jinja2 import Environment, PackageLoader
 
-# from server import Server
+from server import Server
 import utils
 
 
@@ -13,7 +13,7 @@ env = Environment(
 app = Sanic(__name__)
 app.static("/static", "./static")
 
-# server = Server()
+server = Server()
 
 
 @app.route("/")
@@ -37,9 +37,6 @@ async def sign_in(request):
 @app.route("/sign-up", methods=["POST"])
 async def sign_up(request):
     rq = request.form
-
-    return json(rq)
-    """
     name = rq.get("name")
     lastname = rq.get("lastname")
     email = rq.get("email")
@@ -51,7 +48,6 @@ async def sign_up(request):
         email=email, uname=uname, pwd=pwd,
     )
     return res
-    """
 
 
 @app.route("/user", methods=['GET'])
