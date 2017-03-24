@@ -33,36 +33,29 @@
 <div class="container">
 <div class="list-group">
     <div class="row list-group-item">
-    {% if data != 0 %}
-        {% for item in data["items"] %}
-            <div class="flex-md-column">
-                <img src="{{ item['thumbnail_link'] }}" alt="thumbnail">
-            </div>
-            <div class="col-md-10">
-                <a href="#" class="list-group-item list-group-item-info flex-column align-items-start active">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">{{ item["title"] }}</h4>
-                        <small>
-                            <a href="{{ item['download_link'] }}" target="_blank">
-                                Go to download
-                            </a>
-                        </small>
-                    </div>
-                    <h5 class="mb-1">{{ item["subtitle"] }}</h5>
-                    <h5 class="mb-1"><i>Authors: </i>{{ item["authors"] }}</h5>
-                    <p class="mb-1"><i>Categories: </i>{{ item["categories"] }}</p>
-                    <small>
-                        <i>{{ item["short_description"] }}</i>
-                    </small>
-                </a>
-            </div>
-        {% endfor %}
-    {% else %}
-        <div class="alert alert-info" role="alert">
-            <strong>Without results!</strong>
-            Maybe free eBooks were not found
+    {% for item in data["items"] %}
+        <div class="flex-md-column">
+            <img src="{{ item['thumbnail_link'] }}" alt="thumbnail">
         </div>
-    {% endif %}
+        <div class="col-md-10">
+            <a href="#" class="list-group-item list-group-item-info flex-column align-items-start active">
+                <div class="d-flex w-100 justify-content-between">
+                    <h4 class="mb-1">{{ item["title"] }}</h4>
+                    <small>
+                        <a href="{{ item['download_link'] }}" target="_blank">
+                            Go to download
+                        </a>
+                    </small>
+                </div>
+                <h5 class="mb-1">{{ item["subtitle"] }}</h5>
+                <h5 class="mb-1"><i>Authors: </i>{{ item["authors"] }}</h5>
+                <p class="mb-1"><i>Categories: </i>{{ item["categories"] }}</p>
+                <small>
+                    <i>{{ item["short_description"] }}</i>
+                </small>
+            </a>
+        </div>
+    {% endfor %}
     </div>
 </div>
 </div>
