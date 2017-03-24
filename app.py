@@ -63,7 +63,7 @@ async def search(request):
     template = env.get_template("search.html")
     result = utils.search(q)
     html_content = template.render(
-        data=result if result["items"] else None
+        data=result if result["items"] else 0
     )
     return html(html_content)
 
