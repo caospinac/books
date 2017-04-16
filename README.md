@@ -13,7 +13,7 @@ git clone https://github.com/carlosaospinac/books.git
 cd books
 python3.6 -m venv venv
 source venv/bin/activate
-pip install -r requeriments.pip
+pip install -r requirements.pip
 ```
 
 ## Running project
